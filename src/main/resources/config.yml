@@ -1,0 +1,43 @@
+# LobbyCore Configuration
+
+worlds:
+  # Name of the main SMP world as it appears in Bukkit (commonly "world" for
+  # the default Paper world folder). Change this if your SMP world has a
+  # different folder/name.
+  smp-world-name: "world"
+  # Must match the training world name used by the TryFXTheBot plugin.
+  training-world-name: "tryfx_training"
+
+# Portal villager NPC locations and the banner location below are given as
+# OFFSETS FROM THE SCHEMATIC'S MINIMUM/ORIGIN CORNER - the same convention
+# used for the lobby spawn point (see LobbyWorldManager's SPAWN_OFFSET_*
+# constants). At plugin startup these offsets are added to the schematic's
+# actual paste origin in the world to get real world coordinates, so these
+# numbers stay correct even if the paste origin ever changes.
+portals:
+  smp-portal:
+    offset-x: 13.5
+    offset-y: 15.0
+    offset-z: 39.5
+    yaw: 0.0
+    pitch: 0.0
+    display-name: "Travel to SMP"
+  training-portal:
+    offset-x: 3.5
+    offset-y: 15.0
+    offset-z: 39.5
+    yaw: 0.0
+    pitch: 0.0
+    display-name: "Travel to Training"
+
+# Floating playtime leaderboard banner (TextDisplay entity), in the lobby world.
+# Also given as an offset from the schematic's origin corner (see above).
+# Y is raised above the villagers (offset-y 15) so the banner floats visibly
+# overhead rather than sitting at the same eye-level as the portals.
+banner:
+  offset-x: 8.5
+  offset-y: 18.5
+  offset-z: 40.5
+  top-count: 10
+  # 10 minutes = 12000 ticks (20 ticks/sec * 60 sec * 10 min)
+  refresh-interval-ticks: 12000

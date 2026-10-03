@@ -1,0 +1,27 @@
+name: LobbyCore
+version: '${project.version}'
+main: com.tryfx.lobbycore.LobbyCore
+api-version: '1.21'
+description: Lobby world, hub structure, portal villagers, and playtime leaderboard banner
+author: TryFX
+
+load: POSTWORLD
+depend: [Citizens, WorldEdit, AuthMe]
+
+commands:
+  lobby:
+    description: Teleport back to the lobby
+    usage: /lobby
+    permission: lobbycore.use
+  smp:
+    description: Teleport to the SMP world (backup command alongside the portal villager)
+    usage: /smp
+    permission: lobbycore.use
+
+permissions:
+  lobbycore.use:
+    description: Allows using lobby/smp commands
+    default: true
+  lobbycore.admin:
+    description: Allows lobby admin commands
+    default: op
